@@ -11,6 +11,7 @@ const CLIENT_FOLDER = ensureEndingSlash(path.resolve(__dirname, "../client"));
 const availableComponents: AvailableComponent[] = [
   "Badge",
   "BiliBili",
+  "Catalog",
   "CodePen",
   "FontIcon",
   "PDF",

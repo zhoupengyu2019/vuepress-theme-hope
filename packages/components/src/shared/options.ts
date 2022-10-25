@@ -4,6 +4,7 @@ import type { BackToTopLocaleData } from "./locales.js";
 export type AvailableComponent =
   | "Badge"
   | "BiliBili"
+  | "Catalog"
   | "CodePen"
   | "FontIcon"
   | "PDF"

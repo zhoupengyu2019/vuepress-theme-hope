@@ -41,6 +41,7 @@ export default defineUserConfig({
       components: [
         "Badge",
         "BiliBili",
+        "Catalog",
         "CodePen",
         "FontIcon",
         "PDF",
