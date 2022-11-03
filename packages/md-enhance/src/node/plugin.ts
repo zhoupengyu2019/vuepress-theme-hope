@@ -1,13 +1,14 @@
-import { getDirname, path } from "@vuepress/utils";
 import { useSassPalettePlugin } from "vuepress-plugin-sass-palette";
 import {
   addCustomElement,
   addViteOptimizeDepsExclude,
   addViteOptimizeDepsInclude,
   addViteSsrExternal,
+  addViteSsrNoExternal,
   chainWebpack,
   deepAssign,
   getLocales,
+  mergeViteConfig,
 } from "vuepress-shared/node";
 
 import { logger } from "./utils.js";
@@ -31,12 +32,12 @@ import {
   flowchart,
   footnote,
   hint,
+  imageLazyload,
   imageMark,
   imageSize,
   include,
   katex,
   mathjax,
-  lazyLoad,
   mark,
   mermaid,
   normalDemo,
@@ -59,10 +60,10 @@ import { prepareConfigFile, prepareRevealPluginFile } from "./prepare.js";
 import { MATHML_TAGS } from "./utils.js";
 
 import type { PluginFunction } from "@vuepress/core";
+import type { ViteBundlerOptions } from "@vuepress/bundler-vite";
+import type { RollupWarning } from "rollup";
 import type { KatexOptions } from "katex";
 import type { MarkdownEnhanceOptions } from "../shared/index.js";
-
-const __dirname = getDirname(import.meta.url);
 
 export const mdEnhancePlugin =
   (
@@ -155,18 +156,33 @@ export const mdEnhancePlugin =
             : DEFAULT_VUE_PLAYGROUND_OPTIONS,
       }),
 
-      alias: {
-        // FIXME:
-        // this is a workaround for https://github.com/vitejs/vite/issues/7621
-        // Remove this when issue is fixed
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        "vuepress-plugin-md-enhance/SlidePage": path.resolve(
-          __dirname,
-          "../client/SlidePage.js"
-        ),
-      },
-
       extendsBundlerOptions: (config: unknown, app): void => {
+        const { bundler } = app.options;
+
+        if (bundler.name.endsWith("vite")) {
+          const bundlerConfig = <ViteBundlerOptions>config;
+
+          bundlerConfig.viteOptions = mergeViteConfig(
+            bundlerConfig.viteOptions || {},
+            {
+              build: {
+                rollupOptions: {
+                  onwarn(
+                    warning: RollupWarning,
+                    warn: (warning: RollupWarning) => void
+                  ) {
+                    if (warning.message.includes("Use of eval")) return;
+
+                    warn(warning);
+                  },
+                },
+              },
+            }
+          );
+        }
+
+        addViteSsrNoExternal({ app, config }, "vuepress-shared");
+
         if (katexEnable && katexOptions.output !== "html")
           addCustomElement({ app, config }, MATHML_TAGS);
         else if (mathjaxEnable) addCustomElement({ app, config }, /^mjx-/);
@@ -225,7 +241,7 @@ export const mdEnhancePlugin =
           md.use(attrs, typeof options.attrs === "object" ? options.attrs : {});
         if (getStatus("align")) md.use(align);
         if (getStatus("container")) md.use(hint, locales);
-        if (getStatus("lazyLoad")) md.use(lazyLoad);
+        if (getStatus("imageLazyload")) md.use(imageLazyload);
         if (getStatus("imageTitle")) md.use(imageTitle);
         if (imageMarkEnable)
           md.use(
@@ -242,9 +258,9 @@ export const mdEnhancePlugin =
             typeof options.tasklist === "object" ? options.tasklist : {},
           ]);
 
-        // addtional functions
+        // additional functions
         if (
-          getStatus("vpre") ||
+          getStatus("vPre") ||
           // TODO: Remove it in v2 stable
           legacy
         )

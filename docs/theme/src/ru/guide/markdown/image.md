@@ -18,7 +18,7 @@ tag:
 
 @tab TS
 
-```ts {9-14}
+```ts {9-16}
 // .vuepress/config.ts
 import { defineUserConfig } from "vuepress";
 import { hopeTheme } from "vuepress-theme-hope";
@@ -27,6 +27,8 @@ export default defineUserConfig({
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
+        // Enable image lazyload
+        imageLazyload: true,
         // Enable image mark
         imageMark: true,
         // Enable image size
@@ -41,7 +43,7 @@ export default defineUserConfig({
 
 @tab JS
 
-```js {9-14}
+```js {9-16}
 // .vuepress/config.js
 import { hopeTheme } from "vuepress-theme-hope";
 
@@ -49,6 +51,8 @@ export default {
   theme: hopeTheme({
     plugins: {
       mdEnhance: {
+        // Enable image lazyload
+        imageLazyload: true,
         // Enable image mark
         imageMark: true,
         // Enable image size
@@ -60,6 +64,16 @@ export default {
   }),
 };
 ```
+
+:::
+
+## Отложенная загрузка изображений
+
+Если вы хотите отложено загружать изображения на своих страницах, вы можете установить `imageLazyload: true` в настройках плагина.
+
+::: note
+
+Мы включаем отложенную загрузку с использованием встроенных функций HTML5, поэтому ваш браузер должен поддерживать атрибут [loading=lazy attribute](https://caniuse.com/loading-lazy-attr).
 
 :::
 
@@ -127,7 +141,7 @@ interface ImageMarkOptions {
 
 Иногда вам может понадобиться добавить описание с изображением, в этом случае вы должны установить `plugins.mdEnhance.imageTitle: true`.
 
-Затем, когда вы добавите заголовок к изображению, изображение будет отображаться как `<figure>`, а заголовок будет отображаться как `<figurecaption>`.
+Затем, когда вы добавите заголовок к изображению, изображение будет отображаться как `<figure>`, а заголовок будет отображаться как `<figcaption>`.
 
 ```md
 ![GitHub Logo](/assets/icon/github-light.png "Github Logo")

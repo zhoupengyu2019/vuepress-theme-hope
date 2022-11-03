@@ -72,7 +72,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  vpre?: boolean;
+  vPre?: boolean;
 
   /**
    * Whether to enable tabs.
@@ -144,7 +144,7 @@ export interface MarkdownEnhanceOptions {
    *
    * @default false
    */
-  lazyLoad?: boolean;
+  imageLazyload?: boolean;
 
   /**
    * Whether render figure when title is set
@@ -183,7 +183,7 @@ export interface MarkdownEnhanceOptions {
   mark?: boolean;
 
   /**
-   * Whether to enable tastlist format support
+   * Whether to enable tasklist format support
    *
    * 是否启用任务列表支持
    *

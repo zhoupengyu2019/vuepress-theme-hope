@@ -31,19 +31,27 @@ tag:
 
 Перемещено в `palette.scss`.
 
-- `$mobileidebarWidth` переименован в `$sidebar-mobile-width`
+- `$mobileSidebarWidth` переименован в `$sidebar-mobile-width`
 - `$lineNumbersWrapperWidth` переименован в `$line-numbers-width`
 
 ### Цвета
 
 Перемещено в `palette.scss`.
 
+- Добавлено `$bg-color-secondary`
+
 - `$accentColor` переименован в `$theme-color`
+
 - `$textColor`, `$darkTextColor` объединены в `$text-color`
+
 - `$bgColor`, `$darkBgColor` объединены в `$bg-color`
-- `$bgColorLight`, `$darkBgColorLight` объединены в `$bg-color-light`
-- `$bgColorBlur`, `darkBgColorBlur` объединены в `$bg-color-blur`
+
+- `$bgColorLight`, `$darkBgColorLight` удалено
+
+- `$bgColorBlur`, `darkBgColorBlur` удалено
+
 - `$cardShadowColor`, `$darkCardShadowColor` объединены в `$card-shadow`
+
 - `$boxShadowColor`, `$darkBoxShadowColor` объединены в `$box-shadow`
 
 - `$arrowBgColor` удалено

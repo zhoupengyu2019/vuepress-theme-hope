@@ -15,13 +15,11 @@ type LoaderContext = Exclude<
   : never;
 
 /**
- * Use 'additionalData' to make `${id}-config` availe in scss
+ * Use 'additionalData' to make `${id}-config` available in scss
  *
  * @param config VuePress Bundler config
  * @param app VuePress Node App
- * @param path Path to be responsed
- * @param getResponse respond function
- * @param errMsg error msg
+ * @param id Module id
  */
 export const injectConfigModule = (
   config: unknown,
@@ -39,7 +37,6 @@ export const injectConfigModule = (
       | string
       | ((source: string, file: string) => string | Promise<string>)
       | undefined =
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       viteBundlerConfig.viteOptions?.css?.preprocessorOptions?.["scss"]
         .additionalData;

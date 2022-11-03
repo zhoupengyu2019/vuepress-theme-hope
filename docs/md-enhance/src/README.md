@@ -37,16 +37,16 @@ features:
   - title: Attrs support
     icon: code
     details: Allow you to add attributes for Markdown content
-    link: /guide/atts.html
+    link: /guide/attrs.html
 
   - title: Superscript and subscript support
     icon: superscript
-    details: Your Markdown now suppport superscript and subscript
+    details: Your Markdown now support superscript and subscript
     link: /guide/sup-sub.html
 
   - title: Footnote support
     icon: footnote
-    details: Your Markdown now suppport footnotes
+    details: Your Markdown now support footnotes
     link: /guide/footnote.html
 
   - title: Mark Support
@@ -185,13 +185,13 @@ This plugin exports the following Markdown-it plugin, and you can use them in ot
 - attrs
 - container
 - footnote
+- imageLazyload
 - imageMark
 - imageSize
 - imageTitle
 - include
 - mathjax
 - katex
-- lazyload
 - mark
 - stylize
 - sub

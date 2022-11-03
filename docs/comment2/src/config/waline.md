@@ -61,7 +61,7 @@ Set required fields, default anonymous, optional values:
 
 Login mode status, optional values:
 
-- `'enable'`: enable login (default)
+- `'enable'`: enable login
 - `'disable'`: Login is disabled, users should fill in information to comment
 - `'force'`: Forced login, users must login to comment
 
@@ -132,12 +132,12 @@ number of comments per page.
      */
     more?: (
       word: string,
-      currectCount: number
+      currentCount: number
     ) => Promise<WalineSearchResult[]>;
   }
   ```
 
-Customize search featreus, you can disable search function by setting it to `false`.
+Customize search features, you can disable search function by setting it to `false`.
 
 ## copyright
 

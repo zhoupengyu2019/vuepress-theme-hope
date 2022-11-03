@@ -51,8 +51,8 @@ const getPlaygroundRule =
 
     // Search for the end of the block
     while (
-      // unclosed block should be autoclosed by end of document.
-      // also block seems to be autoclosed by end of parent
+      // unclosed block should be auto closed by end of document.
+      // also block seems to be auto closed by end of parent
       nextLine < endLine
     ) {
       nextLine += 1;
@@ -156,8 +156,8 @@ const atMarkerRule =
 
     // Search for the end of the block
     while (
-      // unclosed block should be autoclosed by end of document.
-      // also block seems to be autoclosed by end of parent
+      // unclosed block should be auto closed by end of document.
+      // also block seems to be auto closed by end of parent
       nextLine < endLine
     ) {
       nextLine += 1;
@@ -209,7 +209,6 @@ const atMarkerRule =
     openToken.markup = markup;
     openToken.info = info.trim();
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     openToken.map = [startLine, nextLine];
 
     state.md.block.tokenize(state, startLine + 1, nextLine);
@@ -257,7 +256,6 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
   });
 
   md.renderer.rules[`${name}_open`] = (tokens, index): string => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const { info } = tokens[index];
 
     const playgroundData: PlaygroundData = {
@@ -304,12 +302,9 @@ export const playground: PluginWithOptions<PlaygroundOptions> = (
             playgroundData.settings = <Record<string, unknown>>(
               JSON.parse(content.trim())
             );
-
-          continue;
         }
-
         // add code block content
-        if (type === "fence" && currentKey)
+        else if (type === "fence" && currentKey)
           playgroundData.files[currentKey] = {
             ext: info,
             content: content,

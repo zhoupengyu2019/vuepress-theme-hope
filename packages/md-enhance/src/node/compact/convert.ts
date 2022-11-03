@@ -12,6 +12,11 @@ export const convertOptions = (
   });
   deprecatedLogger({
     options,
+    deprecatedOption: "lazyload",
+    newOption: "imageLazyload",
+  });
+  deprecatedLogger({
+    options,
     deprecatedOption: "mdImport",
     newOption: "include",
   });
@@ -20,7 +25,11 @@ export const convertOptions = (
     deprecatedOption: "tex",
     newOption: "katex",
   });
-
+  deprecatedLogger({
+    options,
+    deprecatedOption: "vpre",
+    newOption: "vPre",
+  });
   droppedLogger(options, "enableAll");
   droppedLogger(options, "lineNumbers");
   droppedLogger(options, "imageFix");

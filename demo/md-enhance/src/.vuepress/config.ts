@@ -88,13 +88,13 @@ export default defineUserConfig({
       },
       stylize: [
         {
-          matcher: "Recommanded",
+          matcher: "Recommended",
           replacer: ({ tag }) => {
             if (tag === "em")
               return {
                 tag: "Badge",
                 attrs: { type: "tip" },
-                content: "Recommanded",
+                content: "Recommended",
               };
           },
         },
@@ -102,7 +102,7 @@ export default defineUserConfig({
       sub: true,
       sup: true,
       tabs: true,
-      vpre: true,
+      vPre: true,
       vuePlayground: true,
     }),
   ],

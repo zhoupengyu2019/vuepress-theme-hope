@@ -13,13 +13,15 @@ icon: pic
 
 @tab TS
 
-```ts {7-12}
+```ts {7-14}
 // .vuepress/config.ts
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
     mdEnhancePlugin({
+      // 启用图片懒加载
+      imageLazyload: true,
       // 启用图片标记
       imageMark: true,
       // 启用图片大小
@@ -33,13 +35,15 @@ export default {
 
 @tab JS
 
-```js {7-12}
+```js {7-14}
 // .vuepress/config.js
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
     mdEnhancePlugin({
+      // 启用图片懒加载
+      imageLazyload: true,
       // 启用图片标记
       imageMark: true,
       // 启用图片大小
@@ -50,6 +54,16 @@ export default {
   ],
 };
 ```
+
+:::
+
+## 图片懒加载
+
+如果你想在你的页面中延迟加载图片，你可以在插件选项中设置 `imageLazyload: true`。
+
+::: note
+
+我们正在使用原生 HTML5 功能启用延迟加载，因此您的浏览器必须支持 [loading=lazy 属性](https://caniuse.com/loading-lazy-attr)。
 
 :::
 
@@ -117,7 +131,7 @@ interface ImageMarkOptions {
 
 有时，您可能希望为图像添加描述，在这种情况下，您应该在插件选项中设置 `imageTitle: true`。
 
-这样当您为图像添加标题时，图像将显示为 `<figure>` ，标题将显示为 `<figurecaption>`。
+这样当您为图像添加标题时，图像将显示为 `<figure>` ，标题将显示为 `<figcaption>`。
 
 ```md
 ![GitHub 徽标](/assets/icon/github-light.png "Github 徽标")

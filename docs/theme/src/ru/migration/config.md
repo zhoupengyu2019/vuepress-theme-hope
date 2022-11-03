@@ -213,7 +213,7 @@ tag:
 
   - Поддержка нескольких категорий ![New](https://img.shields.io/badge/-new-brightgreen)
 
-  - Переместите все параметры вывода из параметра `plugins.feed.ouput` в корневой каталог параметров плагина и переименуйте их.
+  - Переместите все параметры вывода из параметра `plugins.feed.output` в корневой каталог параметров плагина и переименуйте их.
 
     - `feed.output.atom.enable` переименован `plugins.feed.atom` ![changed](https://img.shields.io/badge/-changed-yellow)
 
@@ -319,7 +319,7 @@ tag:
 
     Управление с поддержкой gfm
 
-  - добавлен `plugins.mdEnhance.vpre` ![New](https://img.shields.io/badge/-New-brightgreen)
+  - добавлен `plugins.mdEnhance.vPre` ![New](https://img.shields.io/badge/-New-brightgreen)
 
     Следующий синтаксис больше не встроен в VuePress2, поэтому мы добавляем эту опцию.
 
@@ -331,7 +331,7 @@ tag:
 
   - переименован `mdEnhance.codegroup` в `plugins.mdEnhance.codetabs` ![changed](https://img.shields.io/badge/-changed-yellow)
 
-  - изменение значение по умолчанию `plugins.mdEnhance.lazyLoad` с `true` на `false` ![changed](https://img.shields.io/badge/-changed-yellow)
+  - переименован `mdEnhance.lazyload` в `plugins.mdEnhance.imageLazyload` изменение значение по умолчанию с `true` на `false` ![changed](https://img.shields.io/badge/-changed-yellow)
 
   - удалено `plugins.mdEnhance.lineNumbers` ![removed](https://img.shields.io/badge/-removed-red)
 

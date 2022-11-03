@@ -193,7 +193,7 @@ const speak = (msg: string) => console.log(msg);
 speak(msg);
 ```
 
-@settings
+@setting
 
 ```json
 {
@@ -218,7 +218,7 @@ const speak = (msg: string) => console.log(msg);
 speak(msg);
 ```
 
-@settings
+@setting
 
 ```json
 {
@@ -414,7 +414,7 @@ interface PlaygroundData {
   importMap?: string;
 
   /**
-   * Playground iles info
+   * Playground files info
    */
   files: Record<
     /** File name */

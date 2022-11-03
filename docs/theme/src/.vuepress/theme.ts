@@ -65,7 +65,15 @@ export default hopeTheme({
   plugins: {
     blog: true,
 
-    components: ["Badge", "CodePen", "PDF", "StackBlitz", "YouTube"],
+    components: [
+      "Badge",
+      "BiliBili",
+      "CodePen",
+      "PDF",
+      "StackBlitz",
+      "VideoPlayer",
+      "YouTube",
+    ],
 
     comment: {
       provider: "Giscus",
@@ -87,12 +95,12 @@ export default hopeTheme({
       echarts: true,
       flowchart: true,
       gfm: true,
+      imageLazyload: true,
       imageMark: true,
       imageSize: true,
       imageTitle: true,
       include: true,
       katex: true,
-      lazyLoad: true,
       mark: true,
       mermaid: true,
       playground: {
@@ -103,13 +111,13 @@ export default hopeTheme({
       },
       stylize: [
         {
-          matcher: "Recommanded",
+          matcher: "Recommended",
           replacer: ({ tag }) => {
             if (tag === "em")
               return {
                 tag: "Badge",
                 attrs: { type: "tip" },
-                content: "Recommanded",
+                content: "Recommended",
               };
           },
         },
@@ -117,7 +125,7 @@ export default hopeTheme({
       sub: true,
       sup: true,
       tabs: true,
-      vpre: true,
+      vPre: true,
       vuePlayground: true,
     },
 

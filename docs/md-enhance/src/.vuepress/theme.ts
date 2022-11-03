@@ -26,12 +26,12 @@ export default theme("md-enhance", {
       echarts: true,
       flowchart: true,
       gfm: true,
+      imageLazyload: true,
       imageMark: true,
       imageSize: true,
       imageTitle: true,
       include: true,
       katex: true,
-      lazyLoad: true,
       mark: true,
       mermaid: true,
       playground: {
@@ -42,13 +42,13 @@ export default theme("md-enhance", {
       },
       stylize: [
         {
-          matcher: "Recommanded",
+          matcher: "Recommended",
           replacer: ({ tag }) => {
             if (tag === "em")
               return {
                 tag: "Badge",
                 attrs: { type: "tip" },
-                content: "Recommanded",
+                content: "Recommended",
               };
           },
         },
@@ -56,7 +56,7 @@ export default theme("md-enhance", {
       sub: true,
       sup: true,
       tabs: true,
-      vpre: true,
+      vPre: true,
       vuePlayground: true,
     },
 

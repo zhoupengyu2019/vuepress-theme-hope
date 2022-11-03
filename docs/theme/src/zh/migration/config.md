@@ -211,7 +211,7 @@ tag:
 
   - 多分类支持 ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
-  - 所有的输出选项从插件选项中的 `ouput` 选项移出到根选项下，并进行了重命名。
+  - 所有的输出选项从插件选项中的 `output` 选项移出到根选项下，并进行了重命名。
 
     - `feed.output.atom.enable` 重命名为 `plugins.feed.atom` ![警告](https://img.shields.io/badge/-warning-yellow)
 
@@ -317,7 +317,7 @@ tag:
 
     一键支持 GFM
 
-  - `plugins.mdEnhance.vpre` ![新增](https://img.shields.io/badge/-新增-brightgreen)
+  - `plugins.mdEnhance.vPre` ![新增](https://img.shields.io/badge/-新增-brightgreen)
 
     VuePress 2 从 `@vuepress/core` 中删除了以下容器支持，因此添加了此选项
 
@@ -331,7 +331,7 @@ tag:
 
   - `mdEnhance.codegroup` 重命名为 `plugins.mdEnhance.codetabs` ![警告](https://img.shields.io/badge/-warning-yellow)
 
-  - `plugins.mdEnhance.lazyLoad` 默认值由 `true` 改为 `false` ![警告](https://img.shields.io/badge/-warning-yellow)
+  - `plugins.mdEnhance.lazyLoad` 改为 `plugins.mdEnhance.imageLazyload`，默认值由 `true` 改为 `false` ![警告](https://img.shields.io/badge/-warning-yellow)
 
   - 移除 `plugins.mdEnhance.enableAll` ![移除](https://img.shields.io/badge/-removed-red)
 

@@ -295,7 +295,7 @@ Future task2              :         des4, after des3, 5d
 
 section Critical tasks
 Completed task in the critical line :crit, done, 2014-01-06,24h
-Implement parser and jison          :crit, done, after des1, 2d
+Implement parser                    :crit, done, after des1, 2d
 Create tests for parser             :crit, active, 3d
 Future task in critical line        :crit, 5d
 Create tests for renderer           :2d
@@ -329,7 +329,7 @@ Future task2              :         des4, after des3, 5d
 
 section Critical tasks
 Completed task in the critical line :crit, done, 2014-01-06,24h
-Implement parser and jison          :crit, done, after des1, 2d
+Implement parser                    :crit, done, after des1, 2d
 Create tests for parser             :crit, active, 3d
 Future task in critical line        :crit, 5d
 Create tests for renderer           :2d
@@ -543,6 +543,64 @@ Rel(SystemC, customerA, "Sends e-mails to")
 
 :::
 
+### 思维导图
+
+```mindmap
+root((VuePress))
+  Out of box
+    Default theme
+      Navbar
+      Sidebar
+      Darkmode
+    I18n
+    Search
+      Search
+      DocSearch<br />by algolia
+  Customize
+    Theme
+      (hope)
+    Plugins
+      (components)
+      (md-enhance)
+      (photo-swipe)
+      (copy-code2)
+      (copyright2)
+      (feed2)
+      (sitemap2)
+      (seo2)
+```
+
+::: details 代码
+
+````md
+```mindmap
+root((VuePress))
+  Out of box
+    Default theme
+      Navbar
+      Sidebar
+      Darkmode
+    I18n
+    Search
+      Search
+      DocSearch<br />by algolia
+  Customize
+    Theme
+      (hope)
+    Plugins
+      (components)
+      (md-enhance)
+      (photo-swipe)
+      (copy-code2)
+      (copyright2)
+      (feed2)
+      (sitemap2)
+      (seo2)
+```
+````
+
+:::
+
 ### 一个复杂的案例
 
 ```mermaid
@@ -556,12 +614,12 @@ graph TB
     end
 
     %% Notice that no text in shape are added here instead that is appended further down
-    e --> od3>Really long text with linebreak<br>in an Odd shape]
+    e --> od3>Really long text with line break<br>in an Odd shape]
 
     %% Comments after double percent signs
     e((Inner / circle<br>and some odd <br>special characters)) --> f(,.?!+-*ز)
 
-    cyr[Cyrillic]-->cyr2((Circle shape Начало));
+    cyr[Cyrillic]-->cyr2((Circle shape));
 
      classDef green fill:#9f6,stroke:#333,stroke-width:2px;
      classDef orange fill:#f96,stroke:#333,stroke-width:4px;
@@ -583,12 +641,12 @@ graph TB
     end
 
     %% Notice that no text in shape are added here instead that is appended further down
-    e --> od3>Really long text with linebreak<br>in an Odd shape]
+    e --> od3>Really long text with line break<br>in an Odd shape]
 
     %% Comments after double percent signs
     e((Inner / circle<br>and some odd <br>special characters)) --> f(,.?!+-*ز)
 
-    cyr[Cyrillic]-->cyr2((Circle shape Начало));
+    cyr[Cyrillic]-->cyr2((Circle shape));
 
      classDef green fill:#9f6,stroke:#333,stroke-width:2px;
      classDef orange fill:#f96,stroke:#333,stroke-width:4px;

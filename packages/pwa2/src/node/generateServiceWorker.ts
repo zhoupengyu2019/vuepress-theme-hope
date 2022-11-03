@@ -12,7 +12,7 @@ import type { App } from "@vuepress/core";
 import type { PWAOptions } from "../shared/index.js";
 
 const imageFilter =
-  (outDir: string, maxsize = 1024): ManifestTransform =>
+  (outDir: string, maxSize = 1024): ManifestTransform =>
   (
     manifestEntries: (ManifestEntry & { size: number })[]
   ): ManifestTransformResult => {
@@ -24,7 +24,7 @@ const imageFilter =
       if (imageExtensions.some((ext) => entry.url.endsWith(ext))) {
         const stats = fs.statSync(path.resolve(outDir, entry.url));
 
-        if (stats.size > maxsize * 1024)
+        if (stats.size > maxSize * 1024)
           warnings.push(
             `Skipped ${entry.url}, as it's ${Math.ceil(stats.size / 1024)} KB.`
           );
@@ -45,9 +45,7 @@ export const generateServiceWorker = async (
   const swDest = dest("service-worker.js");
   const destDir = path.relative(process.cwd(), dest());
 
-  // FIXME: vuepress2beta50 has a bug that output app.js as app.mjs,
-  // this shoud be removed after vuepress2 release beta51
-  const globPatterns = ["**/*.{js,mjs,css,svg,woff,woff2,eot,ttf,otf}"];
+  const globPatterns = ["**/*.{js,css,svg,woff,woff2,eot,ttf,otf}"];
 
   if (options.cacheHTML) globPatterns.push("**/*.html");
   else globPatterns.push("./index.html", "./404.html");
@@ -80,13 +78,13 @@ export const generateServiceWorker = async (
 
     if (size > 104857600)
       logger.error(
-        `Cache Size is larger than 100MB, so that it can not be registerd on all browsers.\n${chalk.blue(
+        `Cache Size is larger than 100MB, so that it can not be registered on all browsers.\n${chalk.blue(
           "Please consider disable `cacheHTML` and `cachePic`, or set `maxSize` and `maxPicSize` option.\n"
         )}`
       );
     else if (size > 52428800)
       logger.warn(
-        `\nCache Size is larger than 50MB, which will not be registerd on Safari.\n${chalk.blue(
+        `\nCache Size is larger than 50MB, which will not be registered on Safari.\n${chalk.blue(
           "Please consider disable `cacheHTML` and `cachePic`, or set `maxSize` and `maxPicSize` option.\n"
         )}`
       );

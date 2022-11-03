@@ -13,13 +13,15 @@ Improve image syntax in Markdown to support color scheme and size.
 
 @tab TS
 
-```ts {7-12}
+```ts {7-14}
 // .vuepress/config.ts
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
     mdEnhancePlugin({
+      // Enable image lazyload
+      imageLazyload: true,
       // Enable image mark
       imageMark: true,
       // Enable image size
@@ -33,13 +35,15 @@ export default {
 
 @tab JS
 
-```js {7-12}
+```js {7-14}
 // .vuepress/config.js
 import { mdEnhancePlugin } from "vuepress-plugin-md-enhance";
 
 export default {
   plugins: [
     mdEnhancePlugin({
+      // Enable image lazyload
+      imageLazyload: true,
       // Enable image mark
       imageMark: true,
       // Enable image size
@@ -50,6 +54,16 @@ export default {
   ],
 };
 ```
+
+:::
+
+## Image Lazyload
+
+If you want to lazyload images in your pages, you can set `imageLazyload: true` in plugin options.
+
+::: note
+
+We are enabling lazyload using native HTML5 features, so your browser must support [loading=lazy attribute](https://caniuse.com/loading-lazy-attr).
 
 :::
 
@@ -117,7 +131,7 @@ The above Markdown will be parsed as:
 
 Sometimes, you may want to add a description with image, in this case, you should set `imageTitle: true` in plugin options.
 
-Then, when you add a title to the image, the image will be displayed as `<figure>` and title will be displayed as `<figurecaption>`.
+Then, when you add a title to the image, the image will be displayed as `<figure>` and title will be displayed as `<figcaption>`.
 
 ```md
 ![GitHub Logo](/assets/icon/github-light.png "Github Logo")

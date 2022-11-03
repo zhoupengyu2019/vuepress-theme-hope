@@ -11,8 +11,7 @@ import type {
   TypeMap,
 } from "../../shared/index.js";
 
-// eslint-disable-next-line
-declare const __VUE_HMR_RUNTIME__: Record<string, any>;
+declare const __VUE_HMR_RUNTIME__: Record<string, unknown>;
 declare const __VUEPRESS_DEV__: boolean;
 declare const BLOG_META_SCOPE: string;
 
@@ -38,7 +37,7 @@ export const useBlogType = <
         `useBlogType: ${
           key
             ? `key ${key} is invalid`
-            : "can not bind to an exisiting key on non blog pages"
+            : "can not bind to an existing key on non blog pages"
         }`
       );
 

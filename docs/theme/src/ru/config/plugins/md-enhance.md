@@ -78,7 +78,7 @@ tag:
 
 :::
 
-### vpre
+### vPre
 
 - Тип: `boolean`
 - По умолчанию: `false`
@@ -127,19 +127,19 @@ tag:
 
 Включить ли поддержку формата сносок.
 
-### lazyLoad
-
-- Тип: `boolean`
-- По умолчанию: `false`
-
-Следует ли лениво загружать все изображения на странице собственным способом.
-
 ### mark
 
 - Тип: `boolean`
 - По умолчанию: `false`
 
 Включить ли поддержку выделения.
+
+### imageLazyload
+
+- Тип: `boolean`
+- По умолчанию: `false`
+
+Следует ли лениво загружать все изображения на странице собственным способом.
 
 ### imageMark
 
@@ -311,7 +311,7 @@ interface TaskListOptions {
     importMap?: string;
 
     /**
-     * Playground iles info
+     * Playground files info
      */
     files: Record<
       /** File name */
