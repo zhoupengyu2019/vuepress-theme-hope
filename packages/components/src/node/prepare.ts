@@ -15,6 +15,7 @@ const availableComponents: AvailableComponent[] = [
   "FontIcon",
   "PDF",
   "StackBlitz",
+  "Player",
   "VideoPlayer",
   "YouTube",
 ];

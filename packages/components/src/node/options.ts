@@ -8,6 +8,7 @@ export type AvailableComponent =
   | "FontIcon"
   | "PDF"
   | "StackBlitz"
+  | "Player"
   | "VideoPlayer"
   | "YouTube";
 
